@@ -1,0 +1,20 @@
+.wrapper {
+    max-width: 600px;
+    justify-content: center;
+    border: 1px solid rgba(95, 158, 160, 0.6);
+}
+
+.container {
+    display: flex;
+    width: 100%;
+}
+
+.list {
+    padding: 0;
+}
+
+.task {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+}
