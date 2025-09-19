@@ -1,15 +1,15 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 500px;
-    height: 600px;
-    border: 1px solid rgba(128, 128, 0, 0.6);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	max-width: 500px;
+	height: 600px;
+	border: 1px solid rgba(128, 128, 0, 0.6);
 }
 
 .display {
-    width: 100%;
-    height: 100%;
-    --bgColor: white;
-    background: var(--bgColor);
+	width: 100%;
+	height: 100%;
+	--bgColor: white;
+	background: var(--bgColor);
 }

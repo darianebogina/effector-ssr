@@ -1,2 +1,2 @@
-export {fetchColor} from "./api"
-export type {Task} from "./types"
+export { fetchColor } from "./api";
+export type { Task } from "./types";

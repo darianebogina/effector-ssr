@@ -1,2 +1,2 @@
-export {model as todoModel} from "./model";
-export {ToDo} from "./ui";
+export { model as todoModel } from "./model";
+export { ToDo } from "./ui";

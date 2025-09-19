@@ -1,2 +1,2 @@
-export {model as counterModel} from "./model";
-export {Counter} from "./ui";
+export { model as counterModel } from "./model";
+export { Counter } from "./ui";
