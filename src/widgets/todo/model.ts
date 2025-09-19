@@ -1,7 +1,7 @@
 import {createEvent, createStore, sample} from "effector";
 import {Task} from "@/shared";
 
-export const $tasks = createStore<Task[]>([], { sid: "tasks" })
+export const $tasks = createStore<Task[]>([])
 
 export const addTask = createEvent<string>()
 export const deleteTask = createEvent<string>()

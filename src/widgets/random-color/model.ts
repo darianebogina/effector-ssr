@@ -7,7 +7,7 @@ const fetchColorFx = createEffect(async () => {
     return await fetchColor();
 });
 
-export const $color = createStore<string>("", { sid: "color" });
+export const $color = createStore<string>("");
 
 sample({
     clock: updateColor,
