@@ -1,2 +1,2 @@
-export {$count, incrementCount, decrementCount} from "./model";
+export {model as counterModel} from "./model";
 export {Counter} from "./ui";

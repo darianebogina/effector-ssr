@@ -1,11 +1,10 @@
 import {createEvent, createStore, sample} from "effector";
 import {Task} from "@/shared";
 
-export const $tasks = createStore<Task[]>([])
-
-export const addTask = createEvent<string>()
-export const deleteTask = createEvent<string>()
-export const setTasks = createEvent<Task[]>()
+const addTask = createEvent<string>();
+const deleteTask = createEvent<string>();
+const setTasks = createEvent<Task[]>();
+const $tasks = createStore<Task[]>([]);
 
 sample({
     clock: setTasks,
@@ -16,7 +15,7 @@ sample({
     clock: addTask,
     source: $tasks,
     fn: (tasks, text) => [
-        { id: Math.floor(Math.random() * 1000).toString(), text },
+        {id: Math.floor(Math.random() * 1000).toString(), text},
         ...tasks,
     ],
     target: $tasks,
@@ -28,3 +27,5 @@ sample({
     fn: (tasks, id) => tasks.filter((task) => task.id !== id),
     target: $tasks,
 });
+
+export const model = {$tasks, addTask, deleteTask, setTasks};

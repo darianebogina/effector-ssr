@@ -1,8 +1,8 @@
 import {createEvent, createStore, sample} from "effector";
 
-export const $count = createStore<number>(0);
-export const incrementCount = createEvent<void>();
-export const decrementCount = createEvent<void>();
+const incrementCount = createEvent<void>();
+const decrementCount = createEvent<void>();
+const $count = createStore<number>(0);
 
 sample({
     clock: incrementCount,
@@ -17,3 +17,5 @@ sample({
     fn: (num) => num - 1,
     target: $count,
 });
+
+export const model = {$count, incrementCount, decrementCount};

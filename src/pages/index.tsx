@@ -2,8 +2,8 @@ import {allSettled, fork, serialize} from "effector";
 import {Provider} from "effector-react";
 import {Task} from "@/shared";
 import {Content} from "@/widgets/content";
-import {setTasks} from "@/widgets/todo";
-import {updateColor} from "@/widgets/random-color";
+import {todoModel} from "@/widgets/todo";
+import {colorModel} from "@/widgets/random-color";
 
 export const getServerSideProps = async () => {
     const scope = fork();
@@ -13,8 +13,8 @@ export const getServerSideProps = async () => {
         text: "your task will be here",
     }];
 
-    await allSettled(setTasks, { scope, params: initialTasks });
-    await allSettled(updateColor, { scope })
+    await allSettled(todoModel.setTasks, {scope, params: initialTasks});
+    await allSettled(colorModel.updateColor, {scope})
 
     return {
         props: {
@@ -23,8 +23,8 @@ export const getServerSideProps = async () => {
     }
 };
 
-export default function Home({ values }: { values: any }) {
-    const scope = fork({ values });
+export default function Home({values}: { values: any }) {
+    const scope = fork({values});
 
     return (
         <>
@@ -32,6 +32,5 @@ export default function Home({ values }: { values: any }) {
                 <Content/>
             </Provider>
         </>
-
     )
 }
